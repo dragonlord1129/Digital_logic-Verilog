@@ -1,0 +1,9 @@
+module t_flipflop (
+    input d, clk,
+    output reg q
+);
+    always @(posedge clk) begin
+        q = !d;
+    end
+
+endmodule

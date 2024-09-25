@@ -1,0 +1,54 @@
+$date
+	Wed Sep 25 14:14:26 2024
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module fourbitcomparator_tb $end
+$var wire 2 ! flag [1:0] $end
+$var reg 4 " Data_in_A [3:0] $end
+$var reg 4 # Data_in_B [3:0] $end
+$scope module uut $end
+$var wire 4 $ A [3:0] $end
+$var wire 4 % B [3:0] $end
+$var reg 1 & equal $end
+$var reg 2 ' flag [1:0] $end
+$var reg 1 ( greater $end
+$var reg 1 ) less $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+1)
+0(
+b11 '
+0&
+b1100 %
+b1010 $
+b1100 #
+b1010 "
+b11 !
+$end
+#100
+b1 !
+b1 '
+1(
+0)
+b1011 #
+b1011 %
+b1111 "
+b1111 $
+#200
+b10 !
+b10 '
+0(
+1&
+b1010 #
+b1010 %
+b1010 "
+b1010 $
+#300

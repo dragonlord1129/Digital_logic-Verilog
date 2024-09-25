@@ -1,0 +1,65 @@
+$date
+	Mon Sep 23 23:19:26 2024
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module p_encoder7_3_tb $end
+$var wire 3 ! a_out [2:0] $end
+$var reg 8 " a_in [7:0] $end
+$scope module uut $end
+$var wire 8 # a_in [7:0] $end
+$var reg 3 $ a_out [2:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b0 $
+b0 #
+b0 "
+b0 !
+$end
+#10
+b111 !
+b111 $
+b10000000 "
+b10000000 #
+#20
+b110 !
+b110 $
+b1000011 "
+b1000011 #
+#30
+b101 !
+b101 $
+b101111 "
+b101111 #
+#40
+b100 !
+b100 $
+b11000 "
+b11000 #
+#50
+b11 !
+b11 $
+b1000 "
+b1000 #
+#60
+b10 !
+b10 $
+b100 "
+b100 #
+#70
+b1 !
+b1 $
+b10 "
+b10 #
+#80
+b0 !
+b0 $
+b1 "
+b1 #
