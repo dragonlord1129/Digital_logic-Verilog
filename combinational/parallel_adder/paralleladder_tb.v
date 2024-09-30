@@ -1,10 +1,10 @@
 module paralleladder_tb;
-    reg [7:0] A, B;       // 8-bit inputs
-    wire [7:0] sum;       // 8-bit sum
+    reg [5:0] A, B;       // 8-bit inputs
+    wire [5:0] sum;       // 8-bit sum
     wire cout;            // Carry out
 
     // Instantiate the parameterized parallel adder for N = 8
-    parallel_adder #(8) adder (
+    parallel_adder #(6) adder (
         .A(A), 
         .B(B), 
         .sum(sum), 
@@ -13,8 +13,8 @@ module paralleladder_tb;
 
     initial begin
         // Test case
-        A = 8'b01010101;
-        B = 8'b00101000;
+        A = 6'b010101;
+        B = 6'b001110;
 
         #10;  // Wait for 10 time units
 

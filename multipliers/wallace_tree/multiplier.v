@@ -15,35 +15,26 @@ module FA (
 endmodule
 
 module CSA (
-    input [7:0] A, B, C, D,
-    output [7:0] sum,
-    output [7:0] carry_out
+    input [5:0] A, B, C, 
+    output [5:0] sum,
+    output [5:0] carry_out
 );
-    wire [7:0] carry_stage;  // Intermediate carry
-    wire [7:0] sum_stage;    // Intermediate sum
-
     genvar i;
     generate
-        for (i = 0; i < 8; i = i + 1) begin
+        for (i = 0; i < 6; i = i + 1) begin
             FA fa1(
                 .a(A[i]), 
                 .b(B[i]), 
                 .cin(C[i]), 
-                .sum(sum_stage[i]), 
-                .carry(carry_stage[i])
-            );
-            HA ha1(
-                .a(sum_stage[i]), 
-                .b(D[i]), 
                 .sum(sum[i]), 
-                .cout(carry_out[i])  // This may need to be adjusted based on carry propagation
+                .carry(carry_out[i])
             );
         end
     endgenerate
 endmodule
 
 
-module parallel_adder #(parameter N = 8) (
+module parallel_adder #(parameter N = 6) (
     input [N-1:0] A,
     input [N-1:0] B,
     output [N-1:0] sum,
@@ -62,7 +53,7 @@ module parallel_adder #(parameter N = 8) (
     genvar i;
     generate
         // Full adders for the remaining bits
-        for (i = 1; i < N; i = i + 1) begin : adders
+        for (i = 1; i < N; i = i + 1) begin 
             FA FA (
                 .a(A[i]), 
                 .b(B[i]), 
@@ -78,41 +69,44 @@ module parallel_adder #(parameter N = 8) (
 endmodule
 
 module multiplier (
-    input [3:0] A, B,
-    output [7:0] PRODUCT,
+    input [2:0] A, B,
+    output [5:0] PRODUCT,
     output cout
 );
-    wire [7:0] partialProduct[3:0]; // 8-bit wide partial products
-    wire [7:0] carry, sum;           // 8-bit wide carry and sum
-    wire [7:0] result_sum;           // 8-bit result sum
+    wire [5:0] partialProduct[2:0]; // 6-bit wide partial products
+    wire [5:0] sum;                  // 6-bit wide sum
+    wire [5:0] carry_temp;           // Temporary wire for carry from CSA
+    reg [5:0] shifted_carry;         // Register for shifted carry
 
     genvar i;
     generate
         // Generate partial products by ANDing A with each bit of B and shifting
-        for (i = 0; i < 4; i = i + 1) begin
-            assign partialProduct[i] = (A & {4{B[i]}}) << i; // Shifting A by i positions
+        for (i = 0; i < 3; i = i + 1) begin
+            assign partialProduct[i] = (A & {3{B[i]}}) << i; // Generate partial products
         end
     endgenerate
 
     // Use the CSA for all bits of the partial products
     CSA csa(
-        .A(partialProduct[0]), // 8 bits from the first partial product
+        .A(partialProduct[0]),
         .B(partialProduct[1]),
         .C(partialProduct[2]),
-        .D(partialProduct[3]), 
-        .carry(carry), // Now passing 8 bits directly
-        .sum(sum)      // Now passing 8 bits directly
+        .carry_out(carry_temp), // Wire to capture the carry output
+        .sum(sum)
     );
 
+    // Shift the carry_temp left and assign LSB to 0
+    always @(*) begin
+        shifted_carry = carry_temp << 1; // Shift carry left
+        shifted_carry[0] = 0;             // Set LSB of shifted_carry to 0
+    end
 
     // Use a parallel adder to sum the results from the CSA
-    parallel_adder #(.N(8)) result (
+    parallel_adder #(.N(6)) result (
         .A(sum), 
-        .B(carry), 
-        .sum(result_sum), 
+        .B(shifted_carry), // Use the shifted carry instead of carry_temp
+        .sum(PRODUCT),      // Directly assign PRODUCT to the result
         .cout(cout)
     ); 
 
-    // Assign the final product
-    assign PRODUCT = result_sum; // Final 8-bit product output
 endmodule

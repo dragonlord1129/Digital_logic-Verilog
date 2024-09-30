@@ -19,7 +19,7 @@ module half_adder (
     assign cout = a & b;
 endmodule
 
-module parallel_adder #(parameter N = 4) (  // N defines the bit-width (default is 4)
+module parallel_adder #(parameter N = 6) (  // N defines the bit-width (default is 4)
     input [N-1:0] A,   // N-bit input A
     input [N-1:0] B,   // N-bit input B
     output [N-1:0] sum, // N-bit sum output

@@ -1,5 +1,5 @@
 $date
-	Mon Sep 30 23:50:00 2024
+	Tue Oct  1 00:50:36 2024
 $end
 $version
 	Icarus Verilog
@@ -8,139 +8,69 @@ $timescale
 	1ps
 $end
 $scope module CSA_tb $end
-$var wire 8 ! sum [7:0] $end
-$var wire 8 " carry [7:0] $end
-$var reg 8 # A [7:0] $end
-$var reg 8 $ B [7:0] $end
-$var reg 8 % C [7:0] $end
-$var reg 8 & D [7:0] $end
+$var wire 6 ! sum [5:0] $end
+$var wire 6 " carry [5:0] $end
+$var reg 6 # A [5:0] $end
+$var reg 6 $ B [5:0] $end
+$var reg 6 % C [5:0] $end
 $scope module uut $end
-$var wire 8 ' A [7:0] $end
-$var wire 8 ( B [7:0] $end
-$var wire 8 ) C [7:0] $end
-$var wire 8 * D [7:0] $end
-$var wire 8 + sum_stage [7:0] $end
-$var wire 8 , sum [7:0] $end
-$var wire 8 - carry_stage [7:0] $end
-$var wire 8 . carry_out [7:0] $end
+$var wire 6 & A [5:0] $end
+$var wire 6 ' B [5:0] $end
+$var wire 6 ( C [5:0] $end
+$var wire 6 ) sum [5:0] $end
+$var wire 6 * carry_out [5:0] $end
 $scope begin genblk1[0] $end
 $scope module fa1 $end
-$var wire 1 / a $end
-$var wire 1 0 b $end
-$var wire 1 1 carry $end
-$var wire 1 2 cin $end
-$var wire 1 3 sum $end
-$upscope $end
-$scope module ha1 $end
-$var wire 1 4 a $end
-$var wire 1 5 b $end
-$var wire 1 6 cout $end
-$var wire 1 7 sum $end
+$var wire 1 + a $end
+$var wire 1 , b $end
+$var wire 1 - carry $end
+$var wire 1 . cin $end
+$var wire 1 / sum $end
 $upscope $end
 $upscope $end
 $scope begin genblk1[1] $end
 $scope module fa1 $end
-$var wire 1 8 a $end
-$var wire 1 9 b $end
-$var wire 1 : carry $end
-$var wire 1 ; cin $end
-$var wire 1 < sum $end
-$upscope $end
-$scope module ha1 $end
-$var wire 1 = a $end
-$var wire 1 > b $end
-$var wire 1 ? cout $end
-$var wire 1 @ sum $end
+$var wire 1 0 a $end
+$var wire 1 1 b $end
+$var wire 1 2 carry $end
+$var wire 1 3 cin $end
+$var wire 1 4 sum $end
 $upscope $end
 $upscope $end
 $scope begin genblk1[2] $end
 $scope module fa1 $end
-$var wire 1 A a $end
-$var wire 1 B b $end
-$var wire 1 C carry $end
-$var wire 1 D cin $end
-$var wire 1 E sum $end
-$upscope $end
-$scope module ha1 $end
-$var wire 1 F a $end
-$var wire 1 G b $end
-$var wire 1 H cout $end
-$var wire 1 I sum $end
+$var wire 1 5 a $end
+$var wire 1 6 b $end
+$var wire 1 7 carry $end
+$var wire 1 8 cin $end
+$var wire 1 9 sum $end
 $upscope $end
 $upscope $end
 $scope begin genblk1[3] $end
 $scope module fa1 $end
-$var wire 1 J a $end
-$var wire 1 K b $end
-$var wire 1 L carry $end
-$var wire 1 M cin $end
-$var wire 1 N sum $end
-$upscope $end
-$scope module ha1 $end
-$var wire 1 O a $end
-$var wire 1 P b $end
-$var wire 1 Q cout $end
-$var wire 1 R sum $end
+$var wire 1 : a $end
+$var wire 1 ; b $end
+$var wire 1 < carry $end
+$var wire 1 = cin $end
+$var wire 1 > sum $end
 $upscope $end
 $upscope $end
 $scope begin genblk1[4] $end
 $scope module fa1 $end
-$var wire 1 S a $end
-$var wire 1 T b $end
-$var wire 1 U carry $end
-$var wire 1 V cin $end
-$var wire 1 W sum $end
-$upscope $end
-$scope module ha1 $end
-$var wire 1 X a $end
-$var wire 1 Y b $end
-$var wire 1 Z cout $end
-$var wire 1 [ sum $end
+$var wire 1 ? a $end
+$var wire 1 @ b $end
+$var wire 1 A carry $end
+$var wire 1 B cin $end
+$var wire 1 C sum $end
 $upscope $end
 $upscope $end
 $scope begin genblk1[5] $end
 $scope module fa1 $end
-$var wire 1 \ a $end
-$var wire 1 ] b $end
-$var wire 1 ^ carry $end
-$var wire 1 _ cin $end
-$var wire 1 ` sum $end
-$upscope $end
-$scope module ha1 $end
-$var wire 1 a a $end
-$var wire 1 b b $end
-$var wire 1 c cout $end
-$var wire 1 d sum $end
-$upscope $end
-$upscope $end
-$scope begin genblk1[6] $end
-$scope module fa1 $end
-$var wire 1 e a $end
-$var wire 1 f b $end
-$var wire 1 g carry $end
-$var wire 1 h cin $end
-$var wire 1 i sum $end
-$upscope $end
-$scope module ha1 $end
-$var wire 1 j a $end
-$var wire 1 k b $end
-$var wire 1 l cout $end
-$var wire 1 m sum $end
-$upscope $end
-$upscope $end
-$scope begin genblk1[7] $end
-$scope module fa1 $end
-$var wire 1 n a $end
-$var wire 1 o b $end
-$var wire 1 p carry $end
-$var wire 1 q cin $end
-$var wire 1 r sum $end
-$upscope $end
-$scope module ha1 $end
-$var wire 1 s a $end
-$var wire 1 t b $end
-$var wire 1 u cout $end
-$var wire 1 v sum $end
+$var wire 1 D a $end
+$var wire 1 E b $end
+$var wire 1 F carry $end
+$var wire 1 G cin $end
+$var wire 1 H sum $end
 $upscope $end
 $upscope $end
 $upscope $end
@@ -148,91 +78,45 @@ $upscope $end
 $enddefinitions $end
 #0
 $dumpvars
-0v
-0u
-0t
-0s
-0r
-0q
-0p
-0o
-0n
-1m
-0l
-1k
-0j
-0i
-0h
-0g
-0f
-0e
-0d
-1c
-1b
-1a
-1`
-1_
-0^
-0]
-0\
-1[
-0Z
-1Y
-0X
-0W
-1V
-1U
-1T
-0S
-0R
-1Q
-1P
-1O
-1N
-1M
-1L
-1K
-1J
-1I
 0H
 0G
-1F
-1E
-1D
+0F
+0E
+0D
 1C
 1B
-1A
+0A
 0@
 0?
 0>
-0=
-0<
-0;
-1:
+1=
+1<
+1;
+0:
 19
 18
 17
-06
-05
-14
-13
-02
-01
-00
+16
+15
+04
+03
+12
+11
+10
 1/
-b101000 .
-b11110 -
-b1010101 ,
-b101101 +
-b1111000 *
-b111100 )
-b11110 (
-b1111 '
-b1111000 &
-b111100 %
-b11110 $
-b1111 #
-b101000 "
-b1010101 !
+0.
+0-
+0,
+1+
+b1110 *
+b10101 )
+b11100 (
+b1110 '
+b111 &
+b11100 %
+b1110 $
+b111 #
+b1110 "
+b10101 !
 $end
 #10000
