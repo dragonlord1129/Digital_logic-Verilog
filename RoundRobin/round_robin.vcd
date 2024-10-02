@@ -1,0 +1,127 @@
+$date
+	Wed Oct  2 23:54:19 2024
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module round_robin_arbiter_tb $end
+$var wire 4 ! grant [3:0] $end
+$var reg 1 " clk $end
+$var reg 4 # request [3:0] $end
+$var reg 1 $ reset $end
+$scope module uut $end
+$var wire 1 " clk $end
+$var wire 4 % request [3:0] $end
+$var wire 1 $ reset $end
+$var reg 3 & current [2:0] $end
+$var reg 4 ' grant [3:0] $end
+$var reg 3 ( next [2:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b0 (
+b0 '
+b0 &
+b0 %
+1$
+b0 #
+0"
+b0 !
+$end
+#5
+1"
+#10
+b1 (
+0"
+b1011 #
+b1011 %
+0$
+#15
+b1 !
+b1 '
+b10 (
+b1 &
+1"
+#20
+0"
+#25
+b10 !
+b10 '
+b100 (
+b10 &
+1"
+#30
+b11 (
+0"
+b1111 #
+b1111 %
+#35
+b100 !
+b100 '
+b100 (
+b11 &
+1"
+#40
+0"
+#45
+b1000 !
+b1000 '
+b1 (
+b100 &
+1"
+#50
+b100 (
+0"
+b1000 #
+b1000 %
+#55
+1"
+#60
+0"
+#65
+1"
+#70
+b1 (
+0"
+b1001 #
+b1001 %
+#75
+b1 !
+b1 '
+b100 (
+b1 &
+1"
+#80
+0"
+#85
+b1000 !
+b1000 '
+b1 (
+b100 &
+1"
+#90
+b11 (
+0"
+b1100 #
+b1100 %
+#95
+b100 !
+b100 '
+b100 (
+b11 &
+1"
+#100
+0"
+#105
+b1000 !
+b1000 '
+b11 (
+b100 &
+1"
+#110
+0"
