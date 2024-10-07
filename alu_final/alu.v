@@ -9,7 +9,10 @@ module alu(
 
     output [7:0] finaloperand,
     output [3:0] outflags1
-);
+);  
+    parameter arithmetic = 1'b0;
+    parameter logicalShift = 1b1;
+
     reg [8:0] result;
     reg [8:0] subresult;
     reg [8:0] temp;
@@ -25,7 +28,7 @@ module alu(
         outflags = flags;
 
         case (grp) 
-            1'b0 : begin // Arithmetic Operations
+            arithmetic : begin // Arithmetic Operations
                 case (opcode)
                     3'b000: begin // ADD
                         result = operand2 + operand3;
@@ -60,7 +63,7 @@ module alu(
 
             end
 
-            1'b1: begin // Logic and Shift Operations
+            logicalShift: begin // Logic and Shift Operations
                 case (opcode)
                     3'b000: begin // AND
                         result = operand2 & operand3;
